@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="main"]
+[ext_resource type="PackedScene" path="res://scenes/HUD.tscn" id="hud"]
+
+[sub_resource type="RectangleShape2D" id="wall_h"]
+size = Vector2(1032, 24)
+
+[sub_resource type="RectangleShape2D" id="wall_v"]
+size = Vector2(24, 528)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("main")
+
+[node name="Floor" type="Polygon2D" parent="."]
+color = Color(0.11, 0.11, 0.14, 1)
+polygon = PackedVector2Array(60, 60, 1092, 60, 1092, 588, 60, 588)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="WallTopVis" type="Polygon2D" parent="Walls"]
+color = Color(0.3, 0.3, 0.36, 1)
+polygon = PackedVector2Array(60, 48, 1092, 48, 1092, 72, 60, 72)
+
+[node name="WallBottomVis" type="Polygon2D" parent="Walls"]
+color = Color(0.3, 0.3, 0.36, 1)
+polygon = PackedVector2Array(60, 576, 1092, 576, 1092, 600, 60, 600)
+
+[node name="WallLeftVis" type="Polygon2D" parent="Walls"]
+color = Color(0.3, 0.3, 0.36, 1)
+polygon = PackedVector2Array(48, 60, 72, 60, 72, 588, 48, 588)
+
+[node name="WallRightVis" type="Polygon2D" parent="Walls"]
+color = Color(0.3, 0.3, 0.36, 1)
+polygon = PackedVector2Array(1080, 60, 1104, 60, 1104, 588, 1080, 588)
+
+[node name="WallTop" type="CollisionShape2D" parent="Walls"]
+position = Vector2(576, 60)
+shape = SubResource("wall_h")
+
+[node name="WallBottom" type="CollisionShape2D" parent="Walls"]
+position = Vector2(576, 588)
+shape = SubResource("wall_h")
+
+[node name="WallLeft" type="CollisionShape2D" parent="Walls"]
+position = Vector2(60, 324)
+shape = SubResource("wall_v")
+
+[node name="WallRight" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1092, 324)
+shape = SubResource("wall_v")
+
+[node name="HUD" parent="." instance=ExtResource("hud")]

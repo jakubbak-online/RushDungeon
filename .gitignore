@@ -1,0 +1,6 @@
+# Cache i importy generowane przez edytor
+.godot/
+
+# Buildy
+/build/
+*.tmp
