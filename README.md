@@ -12,9 +12,8 @@ Zero zewnętrznych assetów — cała grafika jest rysowana wektorowo w kodzie (
 ## Jak uruchomić
 
 1. Pobierz Godot 4 ze strony https://godotengine.org/download (wersja Standard).
-2. Rozpakuj ten ZIP.
-3. Godot → **Import** → wskaż `project.godot` w folderze `RushDungeon` → **Import & Edit**.
-4. **F5** uruchamia grę.
+2. Godot → **Import** → wskaż `project.godot` w folderze `RushDungeon` → **Import & Edit**.
+3. **F5** uruchamia grę.
 
 ## Sterowanie
 
